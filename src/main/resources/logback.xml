@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
+    <property name="catalina.base" value="logs" />
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${catalina.base}/logs/hua.log</file>
+        <file>${catalina.base}/file.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- daily rollover -->
-            <fileNamePattern>${catalina.base}/logs/poison.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>${catalina.base}/file.%d{yyyy-MM-dd}.log</fileNamePattern>
             <maxHistory>30</maxHistory>
         </rollingPolicy>
         <encoder>
@@ -13,10 +14,10 @@
         </encoder>
     </appender>
     <appender name="TRANSACTION" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${catalina.base}/logs/transaction.log</file>
+        <file>${catalina.base}/transaction.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- daily rollover -->
-            <fileNamePattern>${catalina.base}/logs/hua.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>${catalina.base}/transaction.%d{yyyy-MM-dd}.log</fileNamePattern>
             <maxHistory>30</maxHistory>
         </rollingPolicy>
         <encoder>
@@ -41,7 +42,6 @@
     <logger name="org.springframework.transaction" level="WARN" >
         <appender-ref ref="TRANSACTION" />
     </logger>
-    <logger name="org.springframework.security" level="WARN" /> <!-- to debug security related issues (DEBUG) -->
     <logger name="org.springframework.web.servlet.mvc" level="WARN" /> <!-- some serialization issues are at trace level here: org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod -->
     <logger name="com.poison.shiro" level="DEBUG" />
 </configuration>
