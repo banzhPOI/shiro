@@ -6,7 +6,7 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: "jdbc:mysql://poison.cn:3306/shiro?serverTimezone=UTC"
+    url: "jdbc:mysql://poison1994.cn:3306/shiro?serverTimezone=UTC"
     username: "root"
     password: "taobuchu0"
     hikari:
