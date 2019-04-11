@@ -1,0 +1,13 @@
+server:
+    port: 8080
+
+#  主数据库定义（Primary）
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: "jdbc:mysql://poison.cn:3306/shiro?serverTimezone=UTC"
+    username: "root"
+    password: "taobuchu0"
+    hikari:
+      maximum-pool-size: 20 #连接池同一时间可分配的最大活跃连接数，默认是100
