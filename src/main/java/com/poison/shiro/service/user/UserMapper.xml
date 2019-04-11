@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 所有菜单(user) -->
+<mapper namespace="com.poison.shiro.service.user.UserMapper">
+    <!-- 结果映射 -->
+    <resultMap id="baseResultMap" type="com.poison.shiro.domain.User">
+        <id column="ID" property="id" jdbcType="BIGINT"/>
+        <result column="NAME" property="name" jdbcType="VARCHAR"/>
+        <result column="PASSWORD" property="password" jdbcType="INTEGER"/>
+    </resultMap>
+    <!-- 表所有字段 -->
+    <sql id="allColumns">
+        ID, `NAME`, PASSWORD
+    </sql>
+    <!--查询数据列表-->
+    <select id="findAllUsers" resultMap="baseResultMap">
+        SELECT ID, `NAME` FROM `user`
+    </select>
+</mapper>
