@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- permission -->
+<mapper namespace="com.poison.shiro.service.user.PermissionMapper">
+    <!-- 结果映射 -->
+    <resultMap id="baseResultMap" type="com.poison.shiro.domain.Permission">
+        <id column="ID" property="id" jdbcType="BIGINT"/>
+        <result column="NAME" property="name" jdbcType="VARCHAR"/>
+    </resultMap>
+    <!-- 表所有字段 -->
+    <sql id="allColumns">
+        ID, `NAME`
+    </sql>
+    <!--根据userId查询数据列表-->
+    <select id="findByUserId" resultMap="baseResultMap">
+        SELECT
+          p.ID,
+          p.`NAME`
+        FROM permission AS p,user_role AS ur,role_permission AS rp
+        WHERE p.ID = rp.PERMISSION_ID AND rp.ROLE_ID = ur.ROLE_ID AND ur.USER_ID = #{userId}
+    </select>
+</mapper>
