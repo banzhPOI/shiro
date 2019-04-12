@@ -20,6 +20,4 @@ public class UserServiceImpl implements UserService {
         List<User> users = userMapper.findAll();
         return users;
     }
-
-
 }

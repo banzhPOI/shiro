@@ -6,7 +6,6 @@ import com.poison.shiro.domain.User;
 import com.poison.shiro.service.user.PermissionMapper;
 import com.poison.shiro.service.user.RoleMapper;
 import com.poison.shiro.service.user.UserMapper;
-import com.poison.shiro.service.user.UserService;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;

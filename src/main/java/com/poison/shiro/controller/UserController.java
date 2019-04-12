@@ -27,11 +27,9 @@ public class UserController {
         return ResponseHelper.createSuccessResponse(users);
     }
 
-    @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public Response<?> userLoginWithRealmAction (@RequestParam(value = "username") String username,
-                                                        @RequestParam(value = "password") String password){
-
-        myShiro.userLoginActionWithMyRealm(username,password);
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public Response<?> userLoginWithRealmAction(@RequestBody User user) {
+        myShiro.userLoginActionWithMyRealm(user);
         return ResponseHelper.createSuccessResponse();
     }
 }

@@ -1,7 +1,6 @@
 package com.poison.shiro.service.user;
 
 import com.poison.shiro.domain.Role;
-import com.poison.shiro.domain.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
