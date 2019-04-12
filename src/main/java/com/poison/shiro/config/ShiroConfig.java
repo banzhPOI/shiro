@@ -47,8 +47,7 @@ public class ShiroConfig {
         // 权限控制map.
         LinkedHashMap<String, String> filterChainDefinitionMap=new LinkedHashMap<>();
         filterChainDefinitionMap.put("/rest/users/login", "anon"); //表示可以匿名访问
-        filterChainDefinitionMap.put("/logout*","logout");
-        filterChainDefinitionMap.put("/error","anon");
+        filterChainDefinitionMap.put("/rest/users/logout","anon");
         filterChainDefinitionMap.put("/**","authc");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return shiroFilterFactoryBean;

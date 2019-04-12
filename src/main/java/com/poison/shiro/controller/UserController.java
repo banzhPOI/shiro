@@ -28,8 +28,14 @@ public class UserController {
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public Response<?> userLoginWithRealmAction(@RequestBody User user) {
-        myShiro.userLoginActionWithMyRealm(user);
+    public Response<?> userLogin(@RequestBody User user) {
+        myShiro.userLogin(user);
+        return ResponseHelper.createSuccessResponse();
+    }
+
+    @RequestMapping(value = "/logout", method = RequestMethod.POST)
+    public Response<?> logout() {
+        myShiro.userLogout();
         return ResponseHelper.createSuccessResponse();
     }
 }

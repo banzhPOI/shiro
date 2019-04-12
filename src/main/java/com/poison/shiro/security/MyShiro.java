@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 public class MyShiro {
     private Logger logger = LoggerFactory.getLogger(MyShiro.class);
 
-    public void userLoginActionWithMyRealm(User user) {
+    public void userLogin(User user) {
         String username = user.getUsername();
         String password = user.getPassword();
         logger.info("用户：" + username + "正在登录");
@@ -39,5 +39,10 @@ public class MyShiro {
             }
             throw BusinessErrorCodes.getLoginErrorException();
         }
+    }
+
+    public void userLogout() {
+        Subject subject = SecurityUtils.getSubject();
+        subject.logout();
     }
 }
