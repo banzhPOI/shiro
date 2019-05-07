@@ -6,8 +6,8 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: "jdbc:mysql://poison1994.cn:3306/shiro?serverTimezone=UTC"
+    url: "jdbc:mysql://rm-wz941n0f7h327n0w6lo.mysql.rds.aliyuncs.com:3306/shiro?serverTimezone=UTC"
     username: "root"
-    password: "taobuchu0"
+    password: "Taobuchu0"
     hikari:
       maximum-pool-size: 20 #连接池同一时间可分配的最大活跃连接数，默认是100
